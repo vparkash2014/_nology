@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Information about my page -->
+  <title>Inline & Block</title>
+</head>
+<body>
+  <!-- All page content -->
+  <!-- The different headers are: -->
+  <nav></nav>
+
+  <header></header>
+
+  <main>
+    <section></section>
+  </main>
+
+  <footer></footer>
+
+  <!-- the block element will makes a new line and takes width of the parent -->
+  <div>div tag in a block element</div>
+  <p>this is a paragraph</p>
+
+  <!-- an inline elements doesn't take the full width of the parents, it takes the width nessecary for its content -->
+  <a href='#'>This is a link</a>
+  <p>the img tag is a inline element</p>
+
+  <!-- you can put inline elements inside a block element but not a block inside an inline -->
+  <span>span is a inline element</span><span> so it won't introduce a new line. This will be on the same line. </span> <span> span can be useful to styling specific text without introducing a new line</span><span>We want to avoid using div in the middle of text/ paragraph/ inline element</span>
+
+  <!-- text element also called text node is just the text that your write. text node is a inline element -->
+
+  css:
+  use display:flex to put block items next to them
+
+
+  <!-- li is a block elemnent -->
+  <ol>
+    <li>first item</li>
+    <li>second item</li>
+  </ol>
+
+    <style>
+      /* the text will be centered but the bullets will still be at the left because li is a block so it wants to take up the whole width */
+      ol > li  {
+        text-align: center;
+
+        /* display: inline-block is a way of treating block elements as inline elements */
+      }
+
+
+    </style>
+
+<!-- action attributes allows us specify the location where it should send the data
+
+the input submit will group all the inputs and send it to somewhere 
+
+id is the HTML style id
+name attribute is the value the data will be sent with-- allows me to specify the key it will sent
+
+the for attribute-- look up -->
+    <form action="">
+      <div>
+        <label for="textField">Text Field: </label>
+        <input id="textField" name = "nameSentToServer" type="text" required>
+      </div>
+
+      <div>
+        <label for="emailField">Text Field: </label>
+        <input id="emailField" name = "usersEmailAddress" type="text" required>
+      </div>
+
+      <input type="submit" value="Submit">
+
+      <div>
+        <label for="dropDown">Dropdown list:</label>
+        <select id="dropDown" name="dropDownValue" required>
+          <option disabled selected></option> <!-- this is the default -->
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+
+      <div>
+        <textarea rows="6" cols="50" placeholder="Enter text here">Dont' indent your text because it will indent it in the box</textarea> <!-- the textarea is resizable in the browser -->
+      </div>
+    </form>
+
+</body>
+</html>
