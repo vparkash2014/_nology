@@ -1,0 +1,20 @@
+#greenBorder {
+  border: 3px dashed green;
+}
+
+#redBorder {
+  border: 2px solid coral;
+}
+
+#centerH {
+  text-align: center;
+}
+
+.blue-line {
+  color: blue;
+  text-decoration: line-through;
+}
+
+#rightAlign{
+  text-align: right;
+}

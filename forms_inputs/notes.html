@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Information about my page -->
+  <title>Form & Inputs</title>
+</head>
+<body>
+<!-- action attributes allows us specify the location where it should send the data
+
+the input submit will group all the inputs and send it to somewhere 
+
+id is the HTML style id
+name attribute is the value the data will be sent with-- allows me to specify the key it will sent
+
+the for attribute-- look up -->
+    <form action="">
+      <div>
+        <label for="textField">Text Field: </label>
+        <input id="textField" name = "nameSentToServer" type="text" required>
+      </div>
+
+      <div>
+        <label for="emailField">Text Field: </label>
+        <input id="emailField" name = "usersEmailAddress" type="text" required>
+      </div>
+
+      <input type="submit" value="Submit">
+
+      <div>
+        <label for="dropDown">Dropdown list:</label>
+        <select id="dropDown" name="dropDownValue" required>
+          <option disabled selected></option> <!-- this is the default -->
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+
+      <div>
+        <textarea rows="6" cols="50" placeholder="Enter text here">Dont' indent your text because it will indent it in the box</textarea> <!-- the textarea is resizable in the browser -->
+      </div>
+    </form>
+
+</body>
+</html>

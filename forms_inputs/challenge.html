@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms, Input & Validation</title>
+</head>
+<body>
+  <!-- Challenge: Forms, Inputs & Validation
+Summary
+Create a form using what you learnt during that last lesson. This form will include <select> , <input> , <form> , <label> and <textarea> tags: DONE
+
+Specification
+Form should contain 4 fields:
+Email Address (Text Field): DONE
+First Name (Text Field): DONE
+Gender (Dropdown field): DONE
+Message (Text Area): DONE
+
+Required fields:
+Email Address: DONE
+Message: DONE
+
+Form should have a submit button to invoke the required validations: DONE
+
+All fields must have an associated <label>: DONE
+
+Extension
+If you finish the form with the required specifications quickly, make sure to play around with the styling and the layout of your form.
+Tips
+You can wrap inputs in <div> tags to create line breaks. This is because <div> is a block element.: DONE
+You can change the dimensions of <textarea> fields.
+You can add placeholder to <input> fields.: DONE
+You can set default values on <select> fields: DONE-->
+
+  <form>
+
+    <div>
+      <label for="emailField">Email:</label>
+      <input id="emailField" name="userEmailAddress" type="email" required>
+    </div>
+
+    <div>
+      <label for="firstName">First Name:</label>
+      <input id="firstName" name="userFirstName" type="text">
+    </div>
+
+    <div>
+      <label for="genderField">Gender:</label>
+      <select id="genderField" name="userGender">
+        <option disabled selected value="-99">Don't wish to tell you</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+      </select>     
+    </div>
+
+    <div>
+      <label for="comment">Comment:</label>
+      <textarea name="comment" id="comment" rows='4' cols='50' placeholder="Please enter your message here" required></textarea>
+    </div>
+
+
+    <input type="submit" value="Submit Query"> 
+  </form>
+</body>
+</html>
