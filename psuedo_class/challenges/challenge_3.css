@@ -1,0 +1,27 @@
+.challenge3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.challenge3 > p:first-of-type {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.challenge3 > p:last-of-type {
+  color: coral;
+  text-decoration: none;
+}
+
+.challenge3 > p { 
+  color: red;
+  text-decoration: underline;
+}
+
+.challenge3 > h1:first-of-type{
+  color:coral;
+}
+
+.challenge3 > h1:last-of-type{
+  color:lightgreen
+}

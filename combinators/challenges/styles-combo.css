@@ -1,0 +1,29 @@
+div {
+  border: 2px solid #000000;
+}
+
+div h1 {
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div p {
+  color: red;
+  text-decoration: underline;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div ul {
+  list-style-type: none;
+}
+
+div ~ p {
+  color: brown;
+}
+
+div + p {
+  color: coral;
+  font-weight: bold;
+}
+
+

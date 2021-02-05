@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Combinator</title>
+</head>
+<body>
+  
+  <header>
+    <h1> this is a header</h1>
+    <p> sub header</p>
+  </header>
+
+  <p>this p is not in header</p>
+
+  <div class="container">
+    <p>I am a child</p>
+  </div>
+
+  <p>Paragraph 1</p>
+  <p>paragraph 2</p>
+  <style>
+    /* will only change p in header to red */
+    /* descent combinator -- all descents (child, grandchildern etc) will be selected*/
+    header p {
+      color:red;
+    }
+
+    /* child selector -- only the direct descent / childern will by selected */
+    header > p {
+      color:red;
+
+    }
+    /* will change all p to blue -- also matters! so every p will be blue even thought i selected it to be red above */
+    p {
+      color:blue;
+    }
+
+    /* child-parents are nested */
+
+    /* silbings are those at the same level (aka bunch of elements that have the same parent). Silbings are defined as those that come AFTER the selected element  */
+
+    /* all <p> that are silbings of container will be red */
+    .container ~ p {
+      color: red;
+    }
+
+    /*  the first silbing of the container*/
+    .container + {
+      color: blue
+    }
+
+    /* selected the 2nd silbing of container */
+    .container + p + p{
+      color: purple;
+    }
+
+    /* select the silbings of the 1st silbing of container */
+    .container + p ~ p {
+      color: 
+    }
+  </style>
+</body>
+</html>

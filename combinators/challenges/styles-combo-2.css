@@ -1,0 +1,32 @@
+/* all p tags should be indented using margin: Done */
+.doc-section > p {
+  margin-left: 20px;
+}
+
+/* the remaining p tags after an h1 should be dark grey: DONE */
+.doc-section > h1 ~ p {
+  color: darkgray;
+}
+
+/* the first p tag after a h1 should be italic: DONE */
+.doc-section > h1 + p {
+  font-style: italic;
+  color: black;
+}
+
+/* the all p tag after an h2 should be underlined: DONE*/
+.doc-section > h2 ~ p {
+  text-decoration: underline;
+  color: black;
+}
+
+/* all the p tags after h3 should have blue text except the first */
+.doc-section > h3 ~ p {
+  text-decoration: none;
+  color: blue;
+}
+
+.doc-section > h3 + p {
+  color: black;
+}
+

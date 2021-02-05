@@ -1,0 +1,121 @@
+/* changes the spacing of the whole page */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial;
+}
+
+ /* change the spacing around the nav bar  */
+nav {
+  margin-bottom: 20px;
+  background:#2E86C1;
+}
+
+nav > .logo {
+  float: left;
+  margin-left: 10px;
+}
+
+/* flex container */
+nav > ul {
+  list-style-type: none;  /* gets rid of the bullets */
+  height: 68px;
+
+  display: flex;
+  justify-content: flex-end ;  /* works with the position of items horizontal */
+  align-items: center; /* works with position of the items vertical */
+}
+
+nav > ul > li {
+  margin-right: 60px;
+}
+/* editing the text */
+nav > ul > li > a {
+  color: cornsilk;
+  /* text-transform: uppercase; */
+  text-decoration: none; /* removes the underlining of the text */
+}
+
+/* add interactive properties to the nav bar */
+nav > ul > li > a:hover {
+  color: #AED6F1;
+  /* text-decoration: underline; */
+}
+
+
+/* changes the whole header */
+header {
+  text-align: center;
+}
+
+/* change a certain child of header */
+header > h1 {
+  margin-bottom: 10px;
+}
+
+header > p {
+  margin-bottom: 10px;
+}
+
+footer
+{
+  margin-top: 20px;
+  background-color:#2E86C1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  font-size:15px;
+  line-height:12px;
+  color:cornsilk;
+}
+
+.copyright-text{
+  float:left;
+  align-items: center;
+  padding-top: 25px;
+  padding-left: 25px;
+}
+.social-icons
+{
+  /* padding-left:0;
+  margin-bottom:0; */
+  list-style:none;
+  float:right;
+  align-items: center;
+  padding-top: 10px;
+  padding-right: 15px;
+}
+
+.social-icons li
+{
+  display:inline-block;
+  /* margin-bottom:4px */
+}
+
+.social-icons a{
+  background-color :cornsilk;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  text-decoration: none;
+}
+
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.instagram:hover
+{
+  background-color:#ea4c89
+}

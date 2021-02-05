@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>combinators</title>
+</head>
+<body>
+
+  <div class="container">
+    <!-- these paragraphs are direct childern of the container aka they are nested in the container-->
+    <p>This is a direct child</p>
+    <p>this is another direct child</p>
+  
+    <span>
+      <p>
+        this is not a direct child
+      </p>
+    </span>
+  </div>
+
+  <p>This is the first sibling</p>
+  <p>This is the second sibling</p>
+  <p>This is the third sibling</p>
+
+  <style>
+    .container{
+      border: 2px solid black;
+    }
+    /* this changes the color for all the elements in the container */
+    .container p {
+      color: red;
+    }
+    /* this changes of color of the childern of the container */
+    .container > p {
+      color: blue;
+    }
+    /* this changes the color of ALL the siblings after the container */
+    .container ~ p {
+      color: brown;
+    }
+    /* changes the first sibling -- order does matter!! */
+    .container + p {
+      color: orange;
+    }
+  </style>
+
+  <br \>
+  <br \>
+  <h2> We learned...</h2>
+  <ul>
+    <li>about direct childern and siblings of containers</li>
+    <li>how to select elements inside other elements in CSS</li>
+    <li>how to select direct childern of elements of CSS</li>
+    <li>how to play around with siblings of elements</li>
+  </ul>
+
+</body>
+</html>

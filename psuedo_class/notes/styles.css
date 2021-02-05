@@ -1,0 +1,21 @@
+/* hover selects all tags that you hover over */
+a:hover{
+  color: white;
+}
+
+/* visited state selector selects a links that have been visited */
+
+a:link{
+  color:hotpink
+}
+
+/* tag:state */
+a:visited{
+  color: orange
+}
+
+/* active state is when you are linking on it live */
+a:active{
+  color:aqua;
+  font-weight: bold;
+}

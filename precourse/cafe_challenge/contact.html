@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="stylesheet" href="styles.css" >
+  <link rel="stylesheet" href="contact.css" >
+  <title>The Dog House Cafe | Contact</title>
+</head>
+<body>
+  <!-- this is the navigator tag (aka you can create more pages through this tag) -->
+ <nav>
+    <img src="Images/logo.pdf" alt="logo" class="logo">
+    <ul>
+      <li><a href="home.html"> Home</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  
+  <header>
+    <h1>Contact Us </h1>
+    <p>We always love to hear from you.</p>
+  </header>
+
+
+  <main>
+    <form class="contact-form" onsubmit="return submitMessage(event);">
+      <!-- onsubmit allows us to run a javascript code in HTML -->
+      <!-- Email -->
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" required>
+
+      <!-- Full Name -->
+      <label for="fullName">Full Name:</label>
+      <input type="text" name="fullName" id="fullName" >
+
+      <!-- Reason for comment -->
+      <label for="feedbackType">Feedback Type:</label>
+      <select name="feedbackType" id="feedbackType">
+        <option value="review">Review</option>
+        <option value="complaint">Complaint</option>
+        <option value="event">Book Event</option>
+      </select>
+
+      <!-- Comment -->
+      <label for="comment">Comment:</label>
+      <textarea name="comment" id="comment" rows="3" cols="20" placeholder='Leave your comment here' required></textarea>
+
+      <!-- Clear button -->
+      <!-- <button>Clear</button> -->
+      <input type="reset" value="Clear">
+
+      <!-- Submit button: 'input type' Creates submit button that submit all the input inside the form tag  -->
+      <input type="submit" value="Submit Query"> 
+
+    </form>
+  </main>
+
+  <section class="show-messages" id="show-messages">
+    <div class='form-title-section'>
+      <h3>Contact Messages</h3>
+      <button onclick="deleteMessages()">Clear Messages</button>
+    </div>
+
+    <div class='form-wrapper'>
+      <dl id="currentMessages">
+
+      </dl>
+    </section>
+
+      <!-- Site footer -->
+  <footer>
+    <div class="container">
+        <p class="copyright-text">
+          Copyright &copy; 2021 All Rights Reserved by Vaishali
+        </p>
+           
+        <ul class="social-icons">
+          <li><a class="facebook" href="#">F</a></li>
+          <li><a class="twitter" href="#">t</a></li>
+          <li><a class="instagram" href="#">i</a></li>
+        </ul> 
+      </div>
+</footer>
+
+  <script>
+    function deleteMessages() {
+      // We will remove items from sessionstorages
+      if (window.sessionStorage.getItem("messages")) {
+        window.sessionStorage.removeItem("messages");
+      };
+
+      renderMessages();
+    }
+
+    function submitMessage(event) {
+      // we are retieving the submitted messages
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+      const fullName = document.getElementById("fullName").value;
+      const feedbackType = document.getElementById("feedbackType").value;
+      const comment = document.getElementById("comment").value;
+
+      const messageObject = {
+        email, fullName, feedbackType, comment
+      };
+      
+      console.log(messageObject);
+
+      let currentMessages = [];
+
+      // if the key 'messages' exist then pass the value and set it to currentMessages
+      if (window.sessionStorage.getItem("messages")) {
+        currentMessages = JSON.parse(
+          window.sessionStorage.getItem("messages")
+          );
+      };
+
+      currentMessages.push(messageObject); // taking my array and adding it to currentMessages 
+
+      window.sessionStorage.setItem(
+        "messages",
+        JSON.stringify(currentMessages)
+      );
+
+      renderMessages();
+    };
+      
+    function renderMessages(){
+      // we are displaying the messages
+      let currentMessages = [];
+
+      if (window.sessionStorage.getItem("messages")) {
+        currentMessages = JSON.parse(window.sessionStorage.getItem("messages"));
+      };
+
+      let listItems = [];
+      for (let i = 0; i < currentMessages.length; i++) {
+        let listItem = "";
+        const currentMessage = currentMessages[i];
+        listItem += `<dt>${currentMessage.fullName} - ${currentMessage.email}</dt>`; // templete string allows us to use variable inside of a string
+        listItem += `<dd>${currentMessage.feedbackType}: ${currentMessage.comment} </dd>`
+        listItem += `<br />`
+        listItems.push(listItem);
+      };
+
+      let descList = document.getElementById('currentMessages');
+      descList.innerHTML = listItems.join('');
+    }
+
+    renderMessages();
+  </script>
+
+</body>
+</html>
