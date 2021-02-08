@@ -1,0 +1,43 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 900px;
+}
+
+#challenge1{
+  justify-content:center;
+  height: 300px;
+}
+
+#challenge3 {
+  justify-content:  space-between;
+}
+
+.card {
+  width:33.333%;
+  height: 300px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+#blueCard {
+  background-color: lightblue;
+}
+
+#orangeCard {
+  background-color: orange;
+}
+
+#pinkCard {
+  background-color: hotpink;
+}
+
+#redCard {
+  background-color: crimson;
+}
+
+#greenCard {
+  background-color: lightgreen;
+}
