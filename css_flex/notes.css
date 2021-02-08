@@ -1,0 +1,30 @@
+img {
+  width: 300px;
+  border: 20px solid black;
+}
+
+/* display: flex is very similar to display:inline-block. it is forcing the block elements to act like a inline element, so the images will be right next to each other-- individual images are not taking the width of parent and only taking up the width they need to. "renders all the elements one next to each other on the same line */
+.flex-container {
+  display: flex;
+  /* flex-wrap: 600px; when the content of the row > 600px, start on new line */
+  flex-wrap: wrap;
+  width: 609px;
+  height: 1000px;
+  padding: 60px;
+  border: 2px solid black;
+  align-items: center; /* vertical position-- grabs all the elements in the flex box and move them around vertical */
+  align-content: space-evenly ; /* grabs all the rows in the flex box and move them around vertical*/
+  flex-direction: ; /* allows us to reverse elements in our flex container*/
+
+}
+
+/* flex only interacts with child element so applying flex on .flex_outer will act on .flex-container and applying flex on .flex=container only acts on the imges nested within it */
+.flex-outer {
+  display: flex;
+  justify-content: center; /* allows us to seperate contect horizontaly */ 
+}
+
+.flex-container-clearfix {
+  display: flex;
+  justify-content: space-between;
+}
