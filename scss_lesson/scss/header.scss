@@ -1,0 +1,61 @@
+.header__section {
+  border: 2px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+  &--border-green {
+    border-color: green;
+  }
+
+  &--border-coral {
+    border-color: coral;
+  }
+
+  &--border-dashed {
+    border-style: dashed;
+  }
+
+  &--border-3px {
+    border-color: 3px;
+  }
+}
+
+.header__title {
+
+  &--center {
+    text-align: center;
+  }
+
+  &--blue {
+    color: blue;
+  }
+}
+
+.header__paragraph {
+
+  &--blue {
+    color: blue;
+  }
+
+  &--red {
+    color: red;
+  }
+
+  &--line-through {
+    text-decoration: line-through;
+  }
+
+  &--underlined {
+    text-decoration: underline;
+  }
+
+  &--right-align {
+    text-align: right;
+  }
+}
+
+.header__list {
+
+  &--no-style {
+  list-style-type: none;
+  }
+}

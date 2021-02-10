@@ -1,0 +1,17 @@
+.paragraph {
+  &--coral {
+    color: coral;
+  }
+  
+  &--bold {
+    font-weight: bold;
+  }
+    
+  &--brown {
+    color: brown;
+  }
+  
+  &--large {
+    font-size: 50px;
+  }
+}

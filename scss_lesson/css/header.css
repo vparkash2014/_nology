@@ -2,60 +2,41 @@
   border: 2px solid black;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .header__section--border-green {
   border-color: green;
 }
-
 .header__section--border-coral {
   border-color: coral;
 }
-
 .header__section--border-dashed {
   border-style: dashed;
 }
-
 .header__section--border-3px {
   border-color: 3px;
-}
-
-.header__title {
-
 }
 
 .header__title--center {
   text-align: center;
 }
-
 .header__title--blue {
   color: blue;
-} 
-
-.header__paragraph {
-
 }
 
 .header__paragraph--blue {
   color: blue;
 }
-
 .header__paragraph--red {
   color: red;
 }
-
 .header__paragraph--line-through {
   text-decoration: line-through;
 }
-
 .header__paragraph--underlined {
   text-decoration: underline;
 }
-
 .header__paragraph--right-align {
   text-align: right;
 }
-
-.header__list {}
 
 .header__list--no-style {
   list-style-type: none;
