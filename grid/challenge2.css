@@ -1,0 +1,38 @@
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "head head head"
+  "info link album"
+  "info rando album";
+}
+.grid-container > div {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.header-section {
+ grid-area: head;
+
+ font-size: 40px;
+ font-weight: bold;
+}
+
+.info-section {
+  grid-area: info;
+
+  text-align: left;
+}
+
+.link-section {
+  grid-area: link;
+}
+
+.album-section {
+  grid-area: album;
+}
+
+.random-section{
+  grid-area: rando;
+}

@@ -1,0 +1,39 @@
+.card {
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 7px;
+}
+
+.card__figure{
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.card__figure-image{
+  height: 500px;
+  border: 2px solid hotpink;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.card__figure-image--median{
+  height: 500px;
+}
+
+.card__figure-image--small {
+  height: 200px;
+}
+
+.card__figure-image--large {
+  height: 700px;
+}
+
+.card__figure-caption {
+  margin-left: 15px;
+  font-style: italic;
+  color: #555;
+}
+
+.card__figure-caption--bold {
+  font-weight: bold;
+}

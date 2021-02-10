@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid within grid</title>
+</head>
+<body>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-gap: 20px;
+
+      /* the following is the same as 
+      grid-column-template: 1fr
+      you use grid-template-areas to us the labels to specify where each cell goes and how wide */
+      grid-template-areas:
+        "header-section dgd-section dgd-section";
+
+        /* header is taking 2 rows while dgd and mom is taking 2 columns */
+        grid-template-areas:
+        "header dgd dgd"
+        "header mon mom"
+        ;
+    }
+
+    .grid-container > div {
+      border: 2px solid black;
+    }
+
+    .header-section {
+       /* grid-area allows you to label grid section*/
+      grid-area: header;
+    }
+    .mouments-section {
+      grid-are: mon;
+    }
+
+    .dgd-section {
+      grid-area: dgd;
+    }
+  </style>
+  
+</body>
+</html>

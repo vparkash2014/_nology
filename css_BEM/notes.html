@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link ref="stylesheet" href="card.css">
+  <link ref="stylesheet" href="document.css">
+  <title>BEM</title>
+</head>
+<body>
+  <!-- sytnax:
+  block__element--modifier
+  ie:
+  card__figure--medium
+  card__figure--large
+
+  block class and clock class elements 
+  the first class is the general/default styling and the second one is the more specific styling-->
+
+  <!-- by using bem we can create a new css for each blocks or components aka like a "card" block will have card.css  -->
+  <div class="card">
+    <div class="card__figure">
+      <img class="card__figure-image card__figure-image--small"src="frog.jpg">
+      <p class="card__figure-caption card__figure-caption--bold"> this a deadly frog</p>
+    </div>
+
+    <div class="card__figure">
+      <img class="card__figure-image card__figure-image--large"src="frog.jpg">
+      <p class="card__figure-caption"> this a deadly frog</p>
+    </div>
+  </div>
+
+
+  <div class="document">
+    <h1 class="document__header ">My header</h1>
+    <p class="document__paragraph document__paragraph--italic"> Paragraph 1</p>
+    <p class="document__paragraph document__paragraph--dark-grey"> Paragraph 2</p>
+    <p class="document__paragraph document__paragraph--dark-grey"> Paragraph 3</p>
+
+    <h2>My header 2</h2>
+    <p class="document__paragraph document__paragraph--underline"> Paragraph 4</p>
+    <p class="document__paragraph document__paragraph--underline"> Paragraph 5</p>
+
+    <h3>Header 3</h3>
+    <p class="document__paragraph document__paragraph--blue">Paragraph 7</p>
+    <p class="document__paragraph
+    document__paragraph--blue">Paragraph 8</p>
+
+  </div>
+</body>
+</html>

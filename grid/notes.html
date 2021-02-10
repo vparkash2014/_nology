@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid</title>
+</head>
+<body>
+  <!-- Grid: use for the layout of webpage. it is more robost then flex and easier to use. Use it for more consist layout of the page -->
+  
+  <div id="gridContainer">
+    <div>
+      <p>Paragraph 1</p>
+      <p>sub paragraph</p>
+    </div>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <div>
+      <p>Paragraph 5</p>
+      <p>sub paragraph</p>
+      <p>sub paragraph</p>
+      <p>sub paragraph</p>
+    </div>
+    <p>Paragraph 6</p>
+  </div>
+
+  <style>
+    #gridContainer {
+      display: grid;
+      /* specify the the width of each colum of the grid */
+      /* fr: fraction (to find the column width= column width/ sum of all the fraction) */
+      /* each div is a "cell" */
+      grid-template: 1fr 1fr 1fr 1fr;
+      /* stadard gutters adds spacing between cells
+      one value: will create even gaps all around
+      two gabs create x px vertical and x px horizontaly */
+      grid-gap: 30px 100px;
+      /* grid-row-gap: 30px;
+      grid-column-gap: 100px; */
+    }
+    #gridContainer > div #gridContainer > p {
+      border: 2px solid black
+    }
+
+    #gridContainer > p {
+      margin: 0; 
+      display: flex;
+      align-items: center;
+    }
+  </style>
+
+   <!-- creating dynamics grid * -->
+  <div id="gridContainer">
+    <p class="row-2">Paragraph 1</p>
+    <p>Paragraph 1</p>
+    <p class="col-2">Paragraph 1</p>
+    <p>Paragraph 1</p>
+    <p>Paragraph 1</p>
+    <p class="col-3">Paragraph 1</p>
+  </div>
+
+  <style>
+    #gridContainer {
+      display: grid;
+      grid-template: 1fr 1fr 1fr 1fr;
+      grid-gap: 30px 100px;
+    }
+
+    p {
+      border: 1px solid black;
+    }
+
+    .row-2 {
+      grid-row-end: span 2;
+    }
+    
+    .col-2 {
+      grid-column-end: span 2;
+    }
+
+    .col-3 {
+      grid-column-end: span 2;
+    }
+  </style>
+
+
+
+ 
+</body>
+</html>

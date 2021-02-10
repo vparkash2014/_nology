@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex groiw</title>
+</head>
+<body>
+  <div class="flex-container">
+    <p class="about">About</p>
+    <p class="contact">Contact</p>
+    <p class="about">About</p>
+
+  </div>
+
+  <style>
+    /* flex grow creates uneven width for the items in the flex conatiner based on the parent width. flex basic is for more fixed width*/
+    /* properties to look up
+    flex-basic, 
+    flex-grow,
+    flex */
+    .flex-container {
+      display: flex;
+    }
+    p {
+      border: 1px solid black;
+    }
+    .about {
+      flex-grow: 1;
+    }
+    .contact {
+      flex-grow: 2;
+    }
+    .about {
+      flex-grow: 2;
+    }
+  </style>
+</body>
+</html>
