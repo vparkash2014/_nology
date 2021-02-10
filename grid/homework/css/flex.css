@@ -1,0 +1,23 @@
+.flex {
+  display: flex;
+}
+.flex--col {
+  flex-direction: column;
+}
+.flex--space-between {
+  justify-content: space-between;
+}
+.flex--space-around {
+  justify-content: space-around;
+}
+.flex--even {
+  justify-content: space-evenly;
+}
+.flex--center {
+  justify-content: center;
+}
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=flex.css.map */

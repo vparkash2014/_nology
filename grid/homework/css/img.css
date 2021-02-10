@@ -1,0 +1,19 @@
+.img {
+  height: 100px;
+  width: auto;
+}
+.img--large {
+  height: 300px;
+  width: 300px;
+}
+.img--med {
+  height: 150px;
+}
+.img--small {
+  height: 100px;
+}
+.img--long {
+  width: 300px;
+}
+
+/*# sourceMappingURL=img.css.map */
