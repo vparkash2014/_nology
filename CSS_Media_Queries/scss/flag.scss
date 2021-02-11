@@ -1,0 +1,71 @@
+.flag {
+  height: 300px;
+  width: 500px;
+
+  &__block {
+    &:nth-child(1) {
+      background-color: black;
+    }
+  }
+
+  @media (max-width: 599px) {
+    & {
+      display: flex;
+      height: 130px;
+      width: 200px;
+    }
+
+    &__block {
+      width: 33.3333%;
+      height: 100%;
+
+      &:nth-child(2) {
+        background-color: yellow;
+      }
+      
+      &:nth-child(3) {
+        background-color: red;
+      }
+    }
+  }
+
+
+  @media (min-width: 600px) and (max-width: 1024px) {
+    & {
+      display: flex;
+    }
+    &__block {
+      width: 33.3333%;
+      height: 100%;
+
+      &:nth-child(2) {
+        background-color: yellow;
+      }
+      
+      &:nth-child(3) {
+        background-color: red;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    
+    &__block {
+      width: 100%;
+      height: 33.3333%;
+
+      &:nth-child(1) {
+        background-color: black;
+      }
+
+      &:nth-child(2) {
+        background-color: red;
+      }
+      
+      &:nth-child(3) {
+        background-color: gold;
+      }
+    }
+  }
+}
+    

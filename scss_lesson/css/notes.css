@@ -1,0 +1,18 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 49 |   @include mod-background-color(primary, $primary);
+ *    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   scss/notes.scss 49:3  mods-background-color()
+ *   scss/notes.scss 57:3  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 49 \2502    @include mod-background-color(primary, $primary);\a    \2502    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss/notes.scss 49:3  mods-background-color()\a   scss/notes.scss 57:3  root stylesheet";
+}

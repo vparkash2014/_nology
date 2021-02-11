@@ -1,0 +1,37 @@
+// max-width: 479px; smaller than phones
+// min-width: 480px: Will target mobile devices in landscape mode and up
+// min-width: 600px: Targets tablets in portrait mode and up
+// min-width: 768px: Targets tablets in landscape mode and up
+// min-width: 1024px: Targets the desktop view
+
+// min-width: go from the smallest to the largest size
+
+// max-width: fo from larger to smallest size
+
+// order matters
+
+.card {
+  &__section {
+    height: 300px;
+  }
+
+  @media (min-width: 600px) and (max-width: 769px) {
+    &__section {
+      background-color: orange;
+      height:150px;
+      display: none; // won't display
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    &__section {
+
+    }
+  }
+
+  // if the screen is larger than 1024 then the color will blue
+  @media (min-width: 1024px) {
+    &__section {
+
+  }
+}

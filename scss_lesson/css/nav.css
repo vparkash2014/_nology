@@ -1,0 +1,41 @@
+.nav {
+  border-bottom: 2px solid black;
+}
+.nav__list {
+  list-style-type: none;
+  display: flex;
+}
+.nav__list--space-between {
+  justify-content: space-between;
+}
+.nav__list--space-evenly {
+  justify-content: space-evenly;
+}
+.nav__list--space-around {
+  justify-content: space-around;
+}
+.nav__list--center {
+  justify-content: center;
+}
+.nav--margin {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.nav__secondary {
+  color: lightgray;
+  text-decoration: none;
+}
+.nav__secondary:hover {
+  color: green;
+  text-decoration: underline;
+}
+.nav__primary {
+  color: black;
+  text-decoration: none;
+}
+.nav__primary:hover {
+  color: purple;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=nav.css.map */

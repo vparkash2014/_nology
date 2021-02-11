@@ -1,0 +1,58 @@
+$primary: black;
+$secondary: lightgray;
+$primary-hover: purple;
+$seconday-hover: green;
+
+@mixin justify($name, $flex-layout) {
+  &--#{$name}{
+  justify-content: $flex-layout; 
+  } 
+}
+
+@mixin color($color) {
+  color: $color;
+}
+
+.nav {
+  border-bottom: 2px solid black;
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+
+    @include justify(space-between, space-between);
+
+    @include justify(space-evenly, space-evenly);
+
+    @include justify(space-around, space-around);
+
+    @include justify(center, center);
+  }
+
+  &--margin { 
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  &__secondary {
+    @include color($secondary);
+    text-decoration: none;
+
+    &:hover {
+      @include color($seconday-hover);
+      text-decoration: underline;
+    }
+  }
+
+  &__primary {
+    @include color($primary);
+    text-decoration: none;
+
+    &:hover {
+      @include color($primary-hover);
+      text-decoration: underline;
+    }
+  }
+
+  
+}

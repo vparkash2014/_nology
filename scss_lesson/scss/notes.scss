@@ -1,0 +1,60 @@
+// this is a fragment (aka like template)
+
+// %font-weight-bold {
+//   font-weight: bold;
+// }
+
+// .card {
+//   &__text{
+//     @extend %font-weight-bold;
+//   }
+// }
+
+
+// @mixin font-bold {
+//   font-weight: bold;
+// }
+
+// .card {
+//   &__text{
+//     @include font-bold;
+//   }
+// }
+
+// you can use a mixin with a variable which we can't with a template
+// @mixin font-bold($weight) {
+//   font-weight: $weight;
+// }
+
+// .card {
+//   &__text{
+//     @include font(bold);
+//   }
+// }
+
+$primary: blue;
+$secondary: lightblue;
+$sucess: white;
+$danger: red;
+$warning: yellow; 
+
+
+@mixin mod-color($name, $color) {
+  &--#{$name} {
+    background-color: $color;
+  }
+}
+
+@mixin mods-background-color {
+  @include mod-background-color(primary, $primary);
+  @include mod-background-color(secondary, $secondary);
+  @include mod-background-color(succss, $succes);
+  @include mod-background-color(danger, $danger);
+  @include mod-background-color(warning, $warning);
+}
+
+.button {
+  @include mods-background-color;
+}
+
+// can have mixin for no, one or more variables-- it is just a clever template

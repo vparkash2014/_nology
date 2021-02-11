@@ -1,0 +1,56 @@
+.flag {
+  height: 300px;
+  width: 500px;
+}
+.flag__block:nth-child(1) {
+  background-color: black;
+}
+@media (max-width: 599px) {
+  .flag {
+    display: flex;
+    height: 130px;
+    width: 200px;
+  }
+  .flag__block {
+    width: 33.3333%;
+    height: 100%;
+  }
+  .flag__block:nth-child(2) {
+    background-color: yellow;
+  }
+  .flag__block:nth-child(3) {
+    background-color: red;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .flag {
+    display: flex;
+  }
+  .flag__block {
+    width: 33.3333%;
+    height: 100%;
+  }
+  .flag__block:nth-child(2) {
+    background-color: yellow;
+  }
+  .flag__block:nth-child(3) {
+    background-color: red;
+  }
+}
+@media (min-width: 1024px) {
+  .flag__block {
+    width: 100%;
+    height: 33.3333%;
+  }
+  .flag__block:nth-child(1) {
+    background-color: black;
+  }
+  .flag__block:nth-child(2) {
+    background-color: red;
+  }
+  .flag__block:nth-child(3) {
+    background-color: gold;
+  }
+}
+
+/*# sourceMappingURL=flag.css.map */
