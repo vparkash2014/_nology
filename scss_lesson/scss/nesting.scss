@@ -1,0 +1,73 @@
+.nesting {
+  p {
+    // selects p descents of nesting
+    // combinator selectorer
+  }
+
+  > p {
+    // selects p childern of nesting
+  }
+
+  ~ p {
+    // general sibling
+  }
+
+  + p {
+    // adjacent sibling
+  }
+
+  &__p {
+    // .nesting__p
+    // class selectorer
+  }
+
+  &p {
+    // cardp
+  }
+
+  & p {
+    // .nesting p
+    // space matters
+    // don't do this
+  }
+}
+
+// .card__p
+// .card__p--red
+.card {
+  &__p {
+    color: blue;
+
+    &--red {
+      color: red;
+    }
+  }
+}
+
+// how to create a template
+@mixin vertical-justify($justify) {
+  display: flex;
+  justify-content: $justify;
+  flex-direction: column;
+}
+
+.card {
+  @include vertical-justify(center);
+}
+
+.card2 {
+  @include vertical-justify(space-around);
+}
+
+// 
+%vertical-justify-fixed  {
+  display: flex;
+  justify-content: $justify;
+  flex-direction: column;
+}
+
+.card3{
+  @extend %vertical-justify-fixed;
+
+  &__
+}
