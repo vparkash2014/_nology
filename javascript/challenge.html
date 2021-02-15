@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Day 1: Challenge</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="age">Age:</label>
+    <input type="text" id="age" required>
+    <label for="country">Country:</label>
+    <select name="country" id="country" required>
+      <option disabled selected value>Country</option>
+      <option value="usa">USA</option>
+      <option value="aus">Austrlia</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+
+  <p id="output"></p>
+
+  <script>
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', (event)=> {
+      event.preventDefault();
+
+      let output = document.getElementById('output');
+
+      const age = document.getElementById('age').value;
+
+      if (isNaN(age)) {
+        output.innerHTML = "Age is not a number";
+        return;
+      } else if (age <= 0){
+        output.innerHTML = "Age can not be 0 or less";
+        return;
+      };
+
+      const country = document.getElementById('country').value;
+
+      if (country === "usa") {
+        if (age >= 21) {
+          output.innerHTML = "You can drink! "
+        } else {
+          output.innerHTML = "You can't drink!"
+        }
+
+      } else if (country === "aus") {
+        if (age >= 18) {
+          output.innerHTML = "You can drink!";
+        } else {
+          output.innerHTML = "You can't drink!";
+        }
+      }
+    });
+    
+  </script>
+  
+</body>
+</html>

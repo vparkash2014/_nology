@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p class="para" id="para1"> this is a paragraph</p>
+  <p class="para" id="para1"></p>
+
+  <script>
+    // document is a javascript representive of the html doc-- javascript doesnt understand html so it converts it into its own language using this "document" object. 
+    // we can change the html elemnt by "getElement"
+    // const keyword makes a array constant (aka you can't change it)
+    const para1 = document.getElementById("para1");
+    // we can also grab the class but it will return a list 
+    const para = document.getElementsByClassName("para");
+
+    console.log("get by id", para1);
+    console.log("get by class", para);
+
+    // we can change the content but dont use the const keyword
+    // use the let keyword to let the reader know the variable will change
+    // let = document.getElementById("para1");
+
+    // setTimeout(() => {
+    //   para1.innerHTML = "new paragraph content"; // replaces the orginally text with new text
+
+    //   setTimeout(() => {
+    //   para1.classlist.add('hide'); //we can add and remove class to elements
+
+    //   }, 3000);
+    // }, 3000);
+
+  //  we can use user events
+  para2.addEventListiner('click', () => {
+    para2.classList.add('hide');
+  )};
+
+  para2.addEventListiner('click', () => {
+    para2.classList.remove('hide');
+  })
+
+
+  //  html is static but adding javascrip makes it none static
+  
+  alert("are you sure")
+  confrim("are you sure") // use you this to ask for cookies
+
+  //  excute something every time that time has lapsed so it is repeative/ loops through time
+  let margin = 0;
+  setInterval(() => {
+    margin = margin + 10
+    const marginvalue = margin + "px";
+    const para = document.getElementById('para1');
+    para1.style.marginleft = marginvalue;
+  },  6000)
+
+  
+  </script>
+
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+</body>
+</html>

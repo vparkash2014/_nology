@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    document.getElementsByTagName('input')[0].value = "not submit";
+
+    // clears the console out
+    clear();
+
+    // undefined
+    let calum;
+    document.getElementsById('idThatDoesNotExist'); // output is null
+    // defined
+    calum = "calum";
+
+    //check the data type
+    typeof undefinded
+    
+
+    // boolean
+    typeof true;
+    if (true) { do something } else { do something else};
+
+    //number -- any number with no quotes
+    typeof 417904712;
+
+    // a float is always is always a float 
+    // it will cap off eventually
+    // javascript stores numbers differently from string (10 vs '10'). the string of 10 is taking more storage (2bits) than the number of 10 (1 bits). each character in a string is 1 bit while a whole number is one bit
+
+    //string -- anything with quotes around it
+    typeof "35230583";
+    typeof "calum";
+
+    // bigint - is a very large number
+    typeof ( 2n ** 52n);
+
+    "cat".constructor.name;
+
+    // Operatation
+    123 + 1;
+    123 - 1;
+    123 * 2;
+    123 / 2;
+    2 ** 3;
+    5 % 2;
+
+    if (value % 3 == 0);
+
+    2 + 3; // 5
+
+    "2" + 3 ;// "23" -- upcasting-- it will cast the number to a string and concat it
+
+    // comparison operators
+
+    // === checks the value and type
+    // == only checl the value
+    2 === 2; // true
+    2 === 3; // false
+    2 === "2"; // false
+    2 == 2; // true
+    2 == "2"; //true
+
+    2 != 3; // true
+    "2" != 3; // true
+    "2" != 2; // false
+    "2" !== 2; // true
+
+    // > < >= <=
+
+    let value = 3;
+    // checking 3 expressions - add
+    value < 5 && value > 2 %% value % 3 === 0 ;// true
+
+    // or -- only one expression has to hold true
+    value < 2 || value % 3 === 0; // true
+
+    value > 2 || value % 3 != 0; // false
+
+    // falsy and truy
+    if (value) {
+  // value is truthy
+    }
+    else {
+      // value is falsy
+      // it could be false, 0, '', null, undefined or NaN
+    }
+
+    // increment
+    --value + 2
+
+    value = 10;
+    value /= 2; //5
+    value *= 2; // 10;
+
+    // variables -- four ways
+    // always use const unless you need it to change it
+    let // mutable variable
+    const // im-mutable variable-- do not change
+
+
+  </script>
+
+  <form id="myForm">
+    <label for="number">Choose A NUMBER</label>
+    <input type="text" id="number">
+    <input type="submit" value="submit">
+  </form>
+
+  <p id="output"></p>
+
+  <script>
+  // control structure
+    // the following is mutualy exclusive
+    // // this is a falsy statement so !value is true
+
+    const form = document.getElementById('myForm');
+    // this is another way to write a function
+    // arrow function
+    // passing an function  into a function
+    // addEventListener is a function that takes to arguments: the event and then another function that you want to it to run
+    // below we entered an annoyamonous function within addEventListiner
+    form.addEventListener('submit',(event) => {
+      // prevent form from redircting
+      event.preventDefault();
+      // grabbing my empyt p tag by id
+      let output = document.getElementById('output');
+
+      // getting text inpyt for #number input
+      const rawValue = document.getElementsById('number').value;
+
+      // checking if rawValue is an 
+      if (isNaN(rawValue))  {
+        output.innerHTML = "value is not a number";
+        return; // exits out of the function "early exit"
+      }
+      // if rawValue is numerica, convert to integer
+      constant value == parseInt(rawValue);
+
+      if (!value) {
+        output.innerHTML = 'value is not valid' ;// this is a falsy check
+      } else if (value < 5) {
+        output.innerHTML = "value is less than 5";
+      } else if (value %= 3 ===0 ) {
+        output.innerHTML = `${value} divided by 3 is ${value / 3}`;
+      } else {
+        output.innerHTML = 'value is neither less than 5 or divisble by 3';
+      }
+    });
+
+
+
+
+  </script></script>
+  
+</body>
+</html>
