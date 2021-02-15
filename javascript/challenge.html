@@ -28,32 +28,17 @@
       event.preventDefault();
 
       let output = document.getElementById('output');
-
       const age = document.getElementById('age').value;
-
-      if (isNaN(age)) {
-        output.innerHTML = "Age is not a number";
-        return;
-      } else if (age <= 0){
-        output.innerHTML = "Age can not be 0 or less";
-        return;
-      };
-
       const country = document.getElementById('country').value;
 
-      if (country === "usa") {
-        if (age >= 21) {
-          output.innerHTML = "You can drink! "
-        } else {
-          output.innerHTML = "You can't drink!"
-        }
-
-      } else if (country === "aus") {
-        if (age >= 18) {
-          output.innerHTML = "You can drink!";
-        } else {
-          output.innerHTML = "You can't drink!";
-        }
+      if (isNaN(age) || age <= 0) {
+        output.innerHTML = `${age} is not a valid age`;
+      } else if (age >= 21) {
+        output.innerHTML = "You can drink!";
+      } else if (age >= 18 && country === "aus") {
+        output.innerHTML = "You can drink!";
+      } else {
+        output.innerHTML = "You can't drink!"
       }
     });
     

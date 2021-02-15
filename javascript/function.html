@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getInfo(firstName, middleName, lastName, age = 23) {
+      cost fullName = `${firstName} ${middleName} ${lastName}`;
+
+      return fullName + ' is ' + age + ' years old';
+    }
+
+    const name = getInfo("Calum", "Steward", "Hill-Cawthorne");
+    console.log("Name variable log:", name);
+
+    // arrow function 
+    const getInfo = (argumentList) => {
+      // some code
+      // return statement
+    }
+
+    function getInfo(firstName, secondName ...otherNames) {
+      // ...otherNames allows you to enter in as many arguments as you want into the function
+      let name = firstName + " " + secondName;
+
+
+      return otherNames.reduce(acc, name => {
+        return acc + ' ' + name;
+      })
+    }
+
+    console.log( 
+      getInfo("Calum", "Stewart", "hill", "Cawthorne", "Smith")
+    );
+  </script>
+</body>
+</html>
