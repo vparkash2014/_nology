@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>Does box B fit In Box A</title>
+</head>
+<body>
+
+  <form class="container" id="myForm">
+    <div class="">
+      <h1>Box A</h1>
+      <div>
+        <label for="widthA">Width:</label>
+        <input type="text" id="widthA" required>
+      </div>
+      <div>
+        <label for="heightA">Height:</label>
+        <input type="text" id="heightA" required>
+      </div>
+    </div>
+
+    <div class="">
+      <h1>Box B</h1>
+      <div>
+        <label for="widthB">Width:</label>
+        <input type="text" id="widthB" required>
+      </div>
+      <div>
+        <label for="heightB">Height:</label>
+        <input type="text" id="heightB" required>
+      </div>
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <p id="output"></p>
+
+  <script>
+    function compareLength(lengthA, lengthB) {
+      if (lengthA >= lengthB) {
+        return true;
+      } else {
+        return false;
+      };
+    };
+
+    function doesItFit(heightA, heightB, widthA, widthB) {
+      console.log(compareLength(heightA, heightB));
+
+      console.log(compareLength(widthA, widthB));
+
+      return (compareLength(heightA, heightB) && compareLength(widthA, widthB));
+    };
+
+    function checkInput(heightA, heightB, widthA, widthB) {
+      if (isNaN(heightA) || isNaN(heightB) || isNaN(widthA) || isNaN(widthB)) {
+        let output = document.getElementById('output');
+        output.innerHTML = "One of the dimension is not a right size";
+        return true;
+      };
+    };
+
+    function runFinal(event) {
+      event.preventDefault();
+
+      let heightA = document.getElementById('heightA').value;
+      let heightB = document.getElementById('heightB').value;
+      let widthA = document.getElementById('widthA').value;
+      let widthB = document.getElementById('widthB').value;
+
+      console.log(heightA, heightB);
+
+      console.log(heightA >= heightB)
+      if (checkInput(heightA, heightB, widthA, widthB)) {
+        return;
+      } else {
+        let result = doesItFit(heightA, heightB, widthA, widthB);
+        console.log(result);
+      }
+
+
+    }
+
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', runFinal);
+    
+
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+
+  
+</body>
+</html>
