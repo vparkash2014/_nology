@@ -10,34 +10,58 @@
 <body>
 
   <form class="container" id="myForm">
-    <div class="">
-      <h1>Box A</h1>
-      <div>
-        <label for="widthA">Width:</label>
-        <input type="text" id="widthA" required>
+    <div class="row">
+      <div class="col-sm">
+        <h1>Box A</h1>
+        <div>
+          <label for="widthA">Width:</label>
+          <input type="text" id="widthA" required>
+        </div>
+        <div>
+          <label for="heightA">Height:</label>
+          <input type="text" id="heightA" required>
+        </div>
       </div>
-      <div>
-        <label for="heightA">Height:</label>
-        <input type="text" id="heightA" required>
+
+      <div class="col-sm">
+        <h1>Box B</h1>
+        <div>
+          <label for="widthB">Width:</label>
+          <input type="text" id="widthB" required>
+        </div>
+        <div>
+          <label for="heightB">Height:</label>
+          <input type="text" id="heightB" required>
+        </div>
       </div>
     </div>
-
-    <div class="">
-      <h1>Box B</h1>
-      <div>
-        <label for="widthB">Width:</label>
-        <input type="text" id="widthB" required>
-      </div>
-      <div>
-        <label for="heightB">Height:</label>
-        <input type="text" id="heightB" required>
-      </div>
-    </div>
-
-    <input type="submit" value="Submit">
+    <input class="submit" type="submit" value="Submit">
   </form>
 
   <p id="output"></p>
+
+  <div class="flex">
+    <div id="boxA">
+      <div id="boxB"></div>
+    </div>
+  </div>
+
+  <style>
+    .flex {
+      display: flex;
+      justify-content: center;
+    }
+    #boxA {
+      border: 1px solid white;
+      height: 300px;
+      width: 200px;
+    }
+    #boxB {
+      border: 1px solid white;
+      height: 100px;
+      width: 100px;
+    }
+  </style>
 
   <script>
     function compareLength(lengthA, lengthB) {
@@ -49,10 +73,6 @@
     };
 
     function doesItFit(heightA, heightB, widthA, widthB) {
-      console.log(compareLength(heightA, heightB));
-
-      console.log(compareLength(widthA, widthB));
-
       return (compareLength(heightA, heightB) && compareLength(widthA, widthB));
     };
 
@@ -64,6 +84,10 @@
       };
     };
 
+    function checkInput(...args) {
+      return args.every(val => !isNaN(val)); // return true if something all are numbers number .. isNaN return true when isnt a number
+    };
+
     function runFinal(event) {
       event.preventDefault();
 
@@ -72,16 +96,28 @@
       let widthA = document.getElementById('widthA').value;
       let widthB = document.getElementById('widthB').value;
 
-      console.log(heightA, heightB);
+      let output = document.getElementById('output');
 
-      console.log(heightA >= heightB)
       if (checkInput(heightA, heightB, widthA, widthB)) {
-        return;
-      } else {
-        let result = doesItFit(heightA, heightB, widthA, widthB);
+        let result = doesItFit(parseInt(heightA), parseInt(heightB), parseInt(widthA), parseInt(widthB));
         console.log(result);
-      }
 
+        const boxA = document.getElementById('#boxA');
+        boxA.style.border = "1px solid black";
+        boxA.style.height = `$parseInt(heightA)`;
+        boxA.style.width = `$parseInt(widthA)`;
+
+        // boxB
+
+        if (result) {
+          output.innerHTML = "the box B will fit in box A";
+
+        } else {
+          output.innerHTML = "the box B will not fit in box A";;
+        };
+      } else {
+        output.innerHTML = "One of the dimension is not a right size";
+      }
 
     }
 
