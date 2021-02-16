@@ -15,11 +15,11 @@
         <h1>Box A</h1>
         <div>
           <label for="widthA">Width:</label>
-          <input type="text" id="widthA" required>
+          <input onkeyup="checkNumberic(event)" type="text" id="widthA" required>
         </div>
         <div>
           <label for="heightA">Height:</label>
-          <input type="text" id="heightA" required>
+          <input onkeyup="checkNumberic(event)" type="text" id="heightA" required>
         </div>
       </div>
 
@@ -27,11 +27,11 @@
         <h1>Box B</h1>
         <div>
           <label for="widthB">Width:</label>
-          <input type="text" id="widthB" required>
+          <input onkeyup="checkNumberic(event)" type="text" id="widthB" required>
         </div>
         <div>
           <label for="heightB">Height:</label>
-          <input type="text" id="heightB" required>
+          <input onkeyup="checkNumberic(event)" type="text" id="heightB" required>
         </div>
       </div>
     </div>
@@ -64,6 +64,22 @@
   </style>
 
   <script>
+    function checkNumberic(event) {
+      // target => element where event happened
+      const value = event.target.value;
+      
+      // if there is no input do nothing
+      if (value === "") {
+        return;
+      }
+
+      // if there is an input that isn't a number, clear it
+      if (isNaN(value)) {
+        event.target.value = "";
+      }
+
+    }
+
     function compareLength(lengthA, lengthB) {
       if (lengthA >= lengthB) {
         return true;
@@ -76,61 +92,44 @@
       return (compareLength(heightA, heightB) && compareLength(widthA, widthB));
     };
 
-    function checkInput(heightA, heightB, widthA, widthB) {
-      if (isNaN(heightA) || isNaN(heightB) || isNaN(widthA) || isNaN(widthB)) {
-        let output = document.getElementById('output');
-        output.innerHTML = "One of the dimension is not a right size";
-        return true;
-      };
-    };
-
-    function checkInput(...args) {
-      return args.every(val => !isNaN(val)); // return true if something all are numbers number .. isNaN return true when isnt a number
-    };
+    // function checkInput(...args) {
+    //   return args.every(val => !isNaN(val)); // return true if something all are numbers number .. isNaN return true when isnt a number
+    // };
 
     function runFinal(event) {
       event.preventDefault();
 
-      let heightA = document.getElementById('heightA').value;
-      let heightB = document.getElementById('heightB').value;
-      let widthA = document.getElementById('widthA').value;
-      let widthB = document.getElementById('widthB').value;
+      let heightA = parseInt(document.getElementById('heightA').value);
+      let heightB = parseInt(document.getElementById('heightB').value);
+      let widthA = parseInt(document.getElementById('widthA').value);
+      let widthB = parseInt(document.getElementById('widthB').value);
 
       let output = document.getElementById('output');
+      let result = checkInput(heightA, heightB, widthA, widthB);
 
-      if (checkInput(heightA, heightB, widthA, widthB)) {
-        let result = doesItFit(parseInt(heightA), parseInt(heightB), parseInt(widthA), parseInt(widthB));
-        console.log(result);
+      if (result) {
+        output.innerHTML = "the box B will fit in box A";
 
         const boxA = document.getElementById('boxA');
         boxA.style.border = "1px solid black";
         boxA.style.height = `$parseInt(heightA)`;
         boxA.style.width = `$parseInt(widthA)`;
-        // boxA.style.cssText = "background-color = black";
+        boxA.style.backgroundColor = "orange"
 
         const boxB = document.getElementById('boxB');
         boxB.style.border = "1px solid red";
         boxB.style.height = `$parseInt(heightB)`;
         boxB.style.width = `$parseInt(widthB)`;
-        // boxB.style.cssText = "background-color = red";
-
-        if (result) {
-          output.innerHTML = "the box B will fit in box A";
-
-        } else {
-          output.innerHTML = "the box B will not fit in box A";;
-        };
+        boxB.style.backgroundColor = "red";
+        
       } else {
-        output.innerHTML = "One of the dimension is not a right size";
-      }
-
+        output.innerHTML = "the box B will not fit in box A";;
+      };
     }
 
     const form = document.getElementById('myForm');
 
     form.addEventListener('submit', runFinal);
-    
-
   </script>
 
 
