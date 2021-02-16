@@ -52,14 +52,14 @@
       justify-content: center;
     }
     #boxA {
-      border: 1px solid white;
-      height: 300px;
-      width: 200px;
+      background: black;
+      height: 0px;
+      width: 0px;
     }
     #boxB {
-      border: 1px solid white;
-      height: 100px;
-      width: 100px;
+      background-color: red;
+      height: 0px;
+      width: 0px;
     }
   </style>
 
@@ -102,12 +102,17 @@
         let result = doesItFit(parseInt(heightA), parseInt(heightB), parseInt(widthA), parseInt(widthB));
         console.log(result);
 
-        const boxA = document.getElementById('#boxA');
+        const boxA = document.getElementById('boxA');
         boxA.style.border = "1px solid black";
         boxA.style.height = `$parseInt(heightA)`;
         boxA.style.width = `$parseInt(widthA)`;
+        // boxA.style.cssText = "background-color = black";
 
-        // boxB
+        const boxB = document.getElementById('boxB');
+        boxB.style.border = "1px solid red";
+        boxB.style.height = `$parseInt(heightB)`;
+        boxB.style.width = `$parseInt(widthB)`;
+        // boxB.style.cssText = "background-color = red";
 
         if (result) {
           output.innerHTML = "the box B will fit in box A";
