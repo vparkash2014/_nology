@@ -3,8 +3,7 @@
 // output: the perimeter
 
 const perimeterFun = (width, height) => {
-  let perimeter = 2 * ( height + width);
-  return perimeter;
+  return 2 * ( height + width);
 }
 
 console.log("the perimeter of 10 and 5 is ", perimeterFun(10, 5));
@@ -21,8 +20,7 @@ output.innerHTML += `the perimeter of 3 and 8 is ${perimeterFun(3, 8)}` + "<br>"
 // output: area of circle
 
 const circleArea = (radius) => {
-  let area = Math.PI * radius ** 2;
-  return area;
+  return Math.PI * radius ** 2;
 }
 
 console.log("the area of 10", circleArea(10));
@@ -36,8 +34,7 @@ output.innerHTML += `the area of 15 is ${circleArea(15)}` + "<br>"
 // 3. Now do the same to find the circumference of a circle...
 
 const circleCircumference = (radius) => {
-  let circumference = 2 * Math.PI * radius ;
-  return circumference;
+  return 2 * Math.PI * radius;
 }
 
 console.log("the circumference of 10 is ",circleCircumference(10));
