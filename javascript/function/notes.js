@@ -40,7 +40,7 @@ const myName = () =>  {
 
     console.log('Global', myNameString);
 
-    console.log('parent scope' myFullNameString);
+    console.log('parent scope', myFullNameString);
 
     const myInformation = () => {
       // this is the fourth scope-- this scope can use all the global and parents scopes
@@ -48,7 +48,7 @@ const myName = () =>  {
 
       console.log("age", myAge);
       console.log("Fullname", myFullNameString);
-      console.log("My first name:" myNameString);
+      console.log("My first name:", myNameString);
       console.log("my height", myHeight()); // this is undefined since myHeight is not defined 
     }
     
@@ -91,3 +91,60 @@ const myFullName  = (firstName, lastName) => {
 myFullName("Calum", "Hill");
 
 
+// one line functions aka emplicated return values
+const rectanglePerimeter = (width, height) => (width + height) * 2;
+
+const circleArea = (radius) => Math.PI * radius ** 2;
+
+const circlePerimeter = (radius) => 2 * Math.PI * radius;
+
+const checkTruthyWithDefault = (value, defaultValue) => {
+  if (value) {
+    return value;
+  };
+  return defaultValue;
+}
+
+// below is a ternary statement
+const checkTruthyWithDefault = (value, defaultValue) => value ? value : defaultValue;
+
+// <boolean expression> ? <if true return value> ':' <else defaultValue>
+
+// example on why not to use let
+let myAge = 23;
+
+const doSomeThingWithAge = (age) => age * 2;
+
+console.log(doSomeThingWithAge());
+
+const changeAge = () => myAge = "my age is 45";
+
+changeAge()
+console.log(doSomeThingWithAge()); // this won't work because myAge is now a str
+
+
+// the code below is an example of how to use const to set a variable but still change it
+const counter = 0;
+const increment = (count) => ++count;
+
+const count1 = increment(counter);
+const count2 = increment(count2);
+const count3 = increment(count2);
+console.log(count3);
+
+// side note -- the order of ++ matters
+++counter // increments the counter by 1 and then returns it
+counter++ // returns the counter without incrementing it 
+
+let count = 1;
+console.log("A. ", count++ * 3) // 3 --> count * 3 ++ where count is 1
+// count is now 2
+console.log("B. ", ++count + 3) // 6 --> count++ +2 (2+1 + 2)
+
+let count = 1;
+console.log(count++ * 3); // ((1 * 3) == 3) then it increments it
+// count is now 2
+console.log(count++ + 3); //  (2+3) == 5 then it increments it
+// count is now 3 
+console.log(++count * 4); // (1+3) * 4 = 16
+// count is 4
