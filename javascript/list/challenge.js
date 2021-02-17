@@ -7,10 +7,10 @@
     // - should return 'calum hill stewart'
 
 const myFunction = (myList, numInt) => {
-  let myString = ' ';
+  let myString  = '';
 
-  for(let i = 0; i < numInt; i++) {
-    myString += `${myList[i]} ` ;
+  for (let i = 0; i < numInt; i++) {
+    myString += `${myList[i]} ` ; // myList[i] + ' '
   }
 
   return myString;
@@ -25,12 +25,26 @@ const myFunction = (myList, numInt) => {
 // - should return 'stewart hill calum'
 
 const myFunction1 = (myList, numInt) => {
-  let myString = ' ';
+  let myString = '';
+  
+  for (let i = numInt - 1 ; i >= 0; i--) {
 
-  for(let i = numInt - 1 ; i >= 0; i--) {
-    myString += `${myList[i]} ` ;
+    myString += !i ? `${myList[i]}` : `${myList[i]} `;
+
+    // i is falsy so !i is true and it will run the first condition 
+
+    // if (i === 0) {
+    //   myString += `${myList[i]}`;
+
+    // } else {
+    //   myString += `${myList[i]} ` ;
+    // }
   }
 
   return myString;
 }
+
+
+// index is based of block of memory
+// use ternairy statements instead of if else statements if is simply-- don't be afraid :P 
 
