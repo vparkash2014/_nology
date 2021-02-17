@@ -148,3 +148,17 @@ console.log(count++ + 3); //  (2+3) == 5 then it increments it
 // count is now 3 
 console.log(++count * 4); // (1+3) * 4 = 16
 // count is 4
+
+
+// When defining variables use caplocks for global variable and lowercase for local variables
+MAX_AGE = 80
+NUMBER_OF_DAYS = 365
+
+const calculateSupply = (age, amountPerDay) => {
+  if (typeof age !== 'number' || typeof amountPerDay !== 'number') {
+    return `${typeof age}: ${age} or ${typeof amountPerDay}: ${amountPerDay} is not a number` }
+
+    const noOfBars = (MAX_AGE - age) * NUMBER_OF_DAYS * amountPerDay;
+
+    return `You will need ${noOfBars} to last you until the ripe old age of ${MAX_AGE}`
+}
