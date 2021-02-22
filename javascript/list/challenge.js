@@ -16,6 +16,16 @@ const myFunction = (myList, numInt) => {
   return myString;
 }
 
+const myFunction = (myList, numInt) => {
+  let concatString = "";
+
+  for (let i = 0; i < numInt, i++) {
+    concatString += i === !i ? myList[i] : ` ${myList[i]}`;
+  }
+
+  return concatString;
+}
+
 // Create a function that takes 2 arguments
 // list of strings and number of iterations
 // concatenate the strings together with spaces for the number of iterations
@@ -27,9 +37,9 @@ const myFunction = (myList, numInt) => {
 const myFunction1 = (myList, numInt) => {
   let myString = '';
   
-  for (let i = numInt - 1 ; i >= 0; i--) {
+  // for (let i = numInt - 1 ; i >= 0; i--) {
 
-    myString += !i ? `${myList[i]}` : `${myList[i]} `;
+  //   myString += !i ? `${myList[i]}` : `${myList[i]} `;
 
     // i is falsy so !i is true and it will run the first condition 
 
@@ -39,7 +49,12 @@ const myFunction1 = (myList, numInt) => {
     // } else {
     //   myString += `${myList[i]} ` ;
     // }
+
+  for (let i = 0; i < numInt; i++) {
+    const current = myList - i - 1;
+    myString += i === !i ? myList[i] : ` ${myList[i]}`; 
   }
+  
 
   return myString;
 }
