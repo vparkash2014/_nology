@@ -6,7 +6,7 @@
 // should throw exception(s) if the type cannot be joined.
 
 const isArray = (arr) => {
-    if (!arr || arr,constructor.name !== 'Array') {
+    if (!arr || arr.constructor.name !== 'Array') {
         return false;
     } 
 
@@ -21,15 +21,14 @@ const isString = (str) => {
     return true;
 }
 
-
-const joinArr = (arr, char) => {
-    let str = "";
+const joinArr = (arr, delim) => {
+    let str = ""; 
 
     if (!isArray(arr)) {
         throw new Error('arr needs to be a number array');
     }
 
-    if (!isString(char)) {
+    if (!isString(delim)) {
         throw new Error('the delimiter needs to be a string');
     }
 
@@ -37,7 +36,7 @@ const joinArr = (arr, char) => {
         if (i === arr.length - 1 ) {
             str += `${arr[i]}`
         } else {
-            str +=`${arr[i]}${char}`;
+            str +=`${arr[i]}${delim}`;
         }
     }
 
