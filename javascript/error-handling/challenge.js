@@ -21,9 +21,8 @@ const isString = (str) => {
     return true;
 }
 
-
 const joinArr = (arr, delim) => {
-    let str = "";
+    let str = ""; 
 
     if (!isArray(arr)) {
         throw new Error('arr needs to be a number array');
