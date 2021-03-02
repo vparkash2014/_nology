@@ -25,15 +25,18 @@ const generateHTMLString = async () => {
 
 const addFactsToDon = async () => {
     const elem = document.getElementById('catFacts');
-
-    elem.innerHTML = await generateHTMLString();
+    const domStr = await generateHTMLString()
+    setTimeout(() => {
+        elem.innerHTML = domStr ;
+    }, 500);
 }
 
 const addAdvicetoDon = async () => {
     const adviceData = await getAdvice();
     adviceElement = document.getElementById('advice');
-
-    adviceElement.innerHTML = `${adviceData.slip.id}: ${adviceData.slip.advice}`
+    setInterval(() => {
+        adviceElement.innerHTML = `${adviceData.slip.id}: ${adviceData.slip.advice}`
+    }, 3000);
 }
 
 const printInputNumber = () => {
