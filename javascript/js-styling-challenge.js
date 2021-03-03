@@ -13,8 +13,9 @@ const getAdvice = async () => {
     return await makeRequestion('advice facts', 'https://api.adviceslip.com/advice');
 };
 
+// this can have an input of data so it is not async
 const generateHTMLString = async () => {
-    const catFacts = await getCatFacts();
+    const catFacts = await makeRequestion('cat facts', 'https://cat-fact.herokuapp.com/facts');
 
     const factHtml  = catFacts.map(fact => {
         return `<li>${fact.text}</li>`
@@ -31,10 +32,10 @@ const addFactsToDon = async () => {
     }, 500);
 }
 
-const addAdvicetoDon = async () => {
-    const adviceData = await getAdvice();
-    adviceElement = document.getElementById('advice');
-    setInterval(() => {
+const addAdvicetoDon = () => {
+    setInterval( async () => {
+        const adviceData = await getAdvice();
+        adviceElement = document.getElementById('advice');
         adviceElement.innerHTML = `${adviceData.slip.id}: ${adviceData.slip.advice}`
     }, 3000);
 }
