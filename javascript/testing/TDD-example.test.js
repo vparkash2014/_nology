@@ -69,13 +69,4 @@ describe('splitStr tests', () => {
         expect(splitStr(englishStr, ' ', '')).toMatchObject(englishArr)
         expect(splitStr(morseStr, '/', ' ').length).toMatchObject(morseArr)
     });
-
-//     test('character input that doesn\'t exist in object', () => {
-//         expect(() => letterTranslate('d', toMorse)).toThrowError(valueNotExistsError);
-//     });
-
-//     test('character input that does exist', () => {
-//         expect(letterTranslate('a')).toBe(toMorse['a']);
-//         expect(letterTranslate('.--', toEnglish)).toBe(toEnglish['.--']);
-//     });
-});
+})
