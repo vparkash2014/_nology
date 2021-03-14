@@ -1,0 +1,11 @@
+.ArticleCard {
+    &_header {
+        color: lightblue;
+    }
+
+    &_text {
+        &__bold {
+            font-weight: bold;
+        }
+    }
+}

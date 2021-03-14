@@ -1,0 +1,14 @@
+.SearchBar {
+
+    &_input{
+        border-radius: 3px;
+        border-color: purple;
+        font-size: 1.4em;
+        margin-right: 10px;
+    }
+
+    &_icon {
+        color: purple;
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,40 @@
+.CardBack {
+    height: 400px;
+    width: 275px;
+    border: 2px solid purple;
+    border-radius: 6px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2), 0 4px 7px rgba(0, 0, 0, 0.27);
+    margin-left: 20px;
+    overflow: scroll;
+
+    &_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: purple;
+        padding-left: 15px;
+        padding-right: 15px;
+        // margin-bottom: 0px;
+    }
+
+    &_text {
+        max-height: 30%;
+        overflow: scroll;
+        color: gray;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &_indgredients {
+        max-height: 10%;
+        overflow: scroll;
+        color: gray;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &_icon {
+        color: purple;
+        margin-right: 5px;
+    }
+}
