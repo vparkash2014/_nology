@@ -30,15 +30,15 @@ import Card from './../Card';
 //     );
 // }
 
-const List = ({ recipes }) => {
+const CardList = ({ recipes, toggleFav }) => {
 
     return (
         <div>
-            {recipes.map(dish => <Card key={dish.IdMeal} dishInformation={dish} /> )}
+            {recipes.map(dish => <Card key={dish.IdMeal} dishInformation={dish} toggleFav={toggleFav} /> )}
         </div> 
     );
 }
 
 
 
-export default List;
+export default CardList;

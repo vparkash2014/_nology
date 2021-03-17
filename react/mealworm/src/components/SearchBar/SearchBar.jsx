@@ -1,37 +1,27 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-
 import styles from './SearchBar.module.scss'
-
-// const SearchBar = () => {
-//     return (
-//         <div>
-//             <input className={styles.SearchBar_input} type="text" placeholder="Search"></input>
-//             <FontAwesomeIcon className={styles.SearchBar_icon} icon={faSearch} size="lg"/>
-//         </div>
-//     )
-// }
-// export default SearchBar;
+import { useState} from 'react';
+import { Link } from "react-router-dom";
+import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 
 
+const SearchBar = ({ setSearch}) => {
+    const [isOpen, setIsOpen] = useState(false); // useState a react hook--hooks tell react to watch things
+    // const [internalSearch, setInternalSearch] = useState('');
 
-import { useState } from 'react';
-
-const toggleState = (state, setState) => setState(!state);
-
-const SearchBar = ({dishInformation}) => {
-    const [isOpen, setIsOpen] = useState(false) // useState a react hook--hooks tell react to watch things
-
+    const updateInternalSearch = (event) => {
+        setSearch(event.target.value);
+    };
     
     return (
-        <div onClick={() => toggleState(isOpen, setIsOpen)}>
-            {isOpen
-                ? <>
-                <input className={styles.SearchBar_input} type="text" placeholder="Search"></input>
-                <FontAwesomeIcon className={styles.SearchBar_icon} icon={faSearch} size="lg"/>
-                </>
-                : <FontAwesomeIcon className={styles.SearchBar_icon} icon={faSearch} size="lg"/>
-            }
+        <div>
+            {!isOpen || <input className={styles.SearchBar_input} onChange={updateInternalSearch} type="text" placeholder="Search" />}
+            <FontAwesomeIcon onClick={() => setIsOpen(!isOpen)} className={styles.SearchBar_icon} icon={faSearch} size="lg"/>
+
+            <Link to="/cookbook">
+                    <FontAwesomeIcon className={styles.SearchBar_icon} icon={faBookOpen} size='lg' />
+            </Link>
         </div>
     );
 }

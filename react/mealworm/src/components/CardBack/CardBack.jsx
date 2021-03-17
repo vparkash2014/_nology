@@ -4,30 +4,28 @@ import { faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as fasFaHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 
-import { useState } from 'react';
+// import { useState } from 'react';
 
-const toggleState = (state, setState) => {
-    setState(!state);
-};
+// const toggleState = (state, setState) => {
+//     setState(!state);
+// };
 
 
-const CardBack = ({ dishInformation} ) => {
+const CardBack = ({ dishInformation, toggleFav} ) => {
     const recipe = dishInformation;
-    const [isFav, setIsFav] = useState(false);
+    const limitInstructions = recipe.strInstructions.substring(0, 300) +'...';
+    const favIcon = recipe.isFav ? fasFaHeart : farFaHeart;
+
+    const favouriteHandle = (event) => {
+        event.stopPropagation();
+        toggleFav(recipe);
+    }
 
     return (
         <div className={styles.CardBack}>
             <div className={styles.CardBack_header}>
                 <div><h2>{recipe.strMeal}</h2></div>
-
-                <div onClick={(event) => {event.stopPropagation(); toggleState(isFav, setIsFav); }}>
-                    {isFav
-                    ? <FontAwesomeIcon className={styles.CardBack_icon} icon={fasFaHeart}/>
-                    : <FontAwesomeIcon className={styles.CardBack_icon} icon={farFaHeart}/>
-                    }
-                </div>
-
-                
+                <FontAwesomeIcon onClick={favouriteHandle} className={styles.CardBack_icon} icon={favIcon} />
             </div>
             <h3 className={styles.CardBack_header}>Instructions</h3>
             <p className={styles.CardBack_text}>{recipe.strInstructions.slice(0, 300) + '...'}</p>
