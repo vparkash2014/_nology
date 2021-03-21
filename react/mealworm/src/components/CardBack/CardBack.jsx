@@ -4,13 +4,6 @@ import { faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as fasFaHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 
-// import { useState } from 'react';
-
-// const toggleState = (state, setState) => {
-//     setState(!state);
-// };
-
-
 const CardBack = ({ dishInformation, toggleFav} ) => {
     const recipe = dishInformation;
     const limitInstructions = recipe.strInstructions.substring(0, 300) +'...';

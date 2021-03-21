@@ -5,30 +5,30 @@ import {
   Route
 } from "react-router-dom";
 
-import NotFound from '../../NotFound';
+import NotFound from '../../components/NotFound';
 import Dashboard from '../Dashboard';
 import CookBook from '../CookBook';
-import Home from './../Home';
+import Home from '../Home';
 // import Favourites from './../Favourites';
-import Login from  './../Login';
+import Login from  '../Login';
 
-const Routes = ({ searchStr }) => {
+const Routes = ({ recipes, toggleFav }) => {
     return (
         <Switch>
-            <Route exact path="/">
+            {/* <Route exact path="/">
                 <Home />
             </Route>
             <Route exact path="/login">
                 <Login />
-            </Route>
-            <Route exact path="/favourites">
-                <CookBook/>
-            </Route>
+            </Route> */}
+            {/* <Route exact path="/favourites">
+                <CookBook recipes={recipes} toggleFav={toggleFav}/>
+            </Route> */}
             <Route exact path="/dashboard">
-                <Dashboard searchStr={searchStr}/>
+                <Dashboard recipes={recipes} toggleFav={toggleFav}/>
             </Route>
             <Route exact path="/cookbook">
-                <CookBook />
+                <CookBook recipes={recipes} toggleFav={toggleFav}/>
             </Route>
             <Route path="*">
                 <NotFound />
