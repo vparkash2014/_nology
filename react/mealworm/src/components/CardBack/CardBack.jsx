@@ -6,7 +6,7 @@ import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 
 const CardBack = ({ dishInformation, toggleFav} ) => {
     const recipe = dishInformation;
-    const limitInstructions = recipe.strInstructions.substring(0, 300) +'...';
+    const limitInstructions = recipe.instructions.substring(0, 300) +'...';
     const favIcon = recipe.isFav ? fasFaHeart : farFaHeart;
 
     const favouriteHandle = (event) => {
@@ -17,11 +17,11 @@ const CardBack = ({ dishInformation, toggleFav} ) => {
     return (
         <div className={styles.CardBack}>
             <div className={styles.CardBack_header}>
-                <div><h2>{recipe.strMeal}</h2></div>
+                <div><h2>{recipe.meal}</h2></div>
                 <FontAwesomeIcon onClick={favouriteHandle} className={styles.CardBack_icon} icon={favIcon} />
             </div>
             <h3 className={styles.CardBack_header}>Instructions</h3>
-            <p className={styles.CardBack_text}>{recipe.strInstructions.slice(0, 300) + '...'}</p>
+            <p className={styles.CardBack_text}>{recipe.instructions.slice(0, 300) + '...'}</p>
 
             <div>
                 <h3  className={styles.CardBack_header}>Ingredients</h3>

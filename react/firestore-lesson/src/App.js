@@ -19,14 +19,35 @@ const fetchColleagues = async (setter) => {
 
 const saveColleagues = async (colleague) => {
   return await firestore.collection('collegues').add(colleague);
+  // const docref = await firestore.collection('collegues').add(colleague);
+  // return findCollague(docref.id)
 };
 
 const deleteColleagues = async (id) => {
   await firestore.collection('collegues').doc('id').delete();
+  // .collection -> CollectionReference
+  // .doc -> documentReference
+  // .delete -> promise with no return value
+
+  // to update the dom 
+  // setColleagues(colleagues.filter(colleague => colleague.id !== id))
 }
 
 const updateColleague = async (id, updateObject) => {
   return await firestore.collection('collegues').doc('id').update(updateObject);
+}
+
+const findCollague = async (id) => {
+  const colleague = await firestore.collection('colleagues').doc(id).get();
+  return {id: colleague.id, ...colleague.data() };
+}
+
+const rewriteColleague = async (id, newData) => {
+  await firestore.collection('colleagues').doc(id).set(newData);
+}
+
+const deleteManyCollegues = async (ids) => {
+  await Promise.all(ids.map(id => deleteColleagues(id)))
 }
 
 const App = () => {

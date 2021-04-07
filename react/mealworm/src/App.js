@@ -19,7 +19,7 @@ const App = () => {
   const [displayedRecipes, setDisplayedRecipes] = useState([]);
 
   const updateRecipes = async () => {
-    const newRecipes = await getRecipes('');
+    const newRecipes = await getRecipesAPI('');
     const cleanedRecipes = cleanRecipes(newRecipes);
     setRecipes(cleanedRecipes);  
     setDisplayedRecipes(cleanedRecipes);

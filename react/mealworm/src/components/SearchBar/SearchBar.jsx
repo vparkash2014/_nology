@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 
 
-const SearchBar = ({ setSearch}) => {
-    const [isOpen, setIsOpen] = useState(false); // useState a react hook--hooks tell react to watch things
+const SearchBar = ({ setSearch, opened = false }) => {
+    const [isOpen, setIsOpen] = useState(opened); // useState a react hook--hooks tell react to watch things
     // const [internalSearch, setInternalSearch] = useState('');
 
     const updateInternalSearch = (event) => {
@@ -17,11 +17,11 @@ const SearchBar = ({ setSearch}) => {
     return (
         <div>
             {!isOpen || <input className={styles.SearchBar_input} onChange={updateInternalSearch} type="text" placeholder="Search" />}
-            <FontAwesomeIcon onClick={() => setIsOpen(!isOpen)} className={styles.SearchBar_icon} icon={faSearch} size="lg"/>
+            <FontAwesomeIcon id={"search"} onClick={() => setIsOpen(!isOpen)} className={styles.SearchBar_icon} icon={faSearch} size="lg"/>
 
-            <Link to="/cookbook">
+            {/* <Link to="/cookbook">
                     <FontAwesomeIcon className={styles.SearchBar_icon} icon={faBookOpen} size='lg' />
-            </Link>
+            </Link> */}
         </div>
     );
 }

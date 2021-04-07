@@ -34,7 +34,7 @@ const CardList = ({ recipes, toggleFav }) => {
 
     return (
         <div>
-            {recipes.map(dish => <Card key={dish.IdMeal} dishInformation={dish} toggleFav={toggleFav} /> )}
+            {recipes.map((dish, index) => <Card key={index} dishInformation={dish} toggleFav={toggleFav} /> )}
         </div> 
     );
 }
