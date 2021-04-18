@@ -15,7 +15,6 @@ const Page = () => {
     return (
         <>
             <button style={buttonStyle} >Test</button>
-            {/* <p>{darkBackground ? 'true' : 'false'}</p> */}
         </>
 
     );
